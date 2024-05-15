@@ -2,7 +2,6 @@ name: xeus-octave
 channels:
 - conda-forge
 dependencies:
-- xeus-zmq
 - xeus-octave
 - octave
 - octave_kernel
@@ -20,4 +19,4 @@ dependencies:
 - fltk
 # for qt graphictoolkit option
 - qt
-  
+- ipywidgets  
