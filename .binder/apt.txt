@@ -1,0 +1,13 @@
+octave
+gnuplot
+ghostscript
+nano
+libgl1-mesa-dev
+xvfb
+libfltk1.3-dev # didn't work to get fltk working for octave
+qt6-base-dev # didn't work for getting qt working for octave ploting
+libglu1
+
+
+
+
