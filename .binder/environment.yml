@@ -27,8 +27,8 @@ dependencies:
   - jupyter_server==1.21.0
 #- jupyterlab       : 3.4.8
   - nbclient==0.7.0
-- nbconvert==7.2.1
-- nbformat==5.7.0
-- notebook==6.4.12
-- qtconsole  #      : not installed
-- traitlets==5.4.0
+  - nbconvert==7.2.1
+  - nbformat==5.7.0
+  - notebook==6.4.12
+  - qtconsole  #      : not installed
+  - traitlets==5.4.0
