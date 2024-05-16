@@ -3,11 +3,7 @@ channels:
 - conda-forge
 dependencies:
 - xeus-octave
-#- octave
 - octave_kernel
-#- nodejs
-#- texinfo
-- gnuplot
 # For Plotly graphical toolkit
 - plotly
 # Runtime dependency for Octave ``symbolic`` package.
@@ -19,4 +15,4 @@ dependencies:
 #- fltk
 # for qt graphictoolkit option
 #- qt
-#- ipywidgets  
+  
