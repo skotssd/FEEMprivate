@@ -3,9 +3,7 @@ channels:
   - conda-forge
 dependencies:
   # Workaround
-  - xeus-zmq=1.0.2=h0541b36_2
-  - xeus-octave==0.1.0
-  - jupyterlab==3.4.8
+  - xeus-octave
   - octave_kernel
   # For Plotly graphical toolkit
   - plotly
@@ -14,21 +12,3 @@ dependencies:
   # For compiling the Octave ``control`` and ``signal`` packages
   #- compilers
   #- make
-  # for fltk graphictoolkit option
-  #- fltk
-  # for qt graphictoolkit option
-  # - qt
-  # from working version jupyter7
-  - IPython==7.33.0
-  - ipykernel==6.16.0
-  - ipywidgets==8.0.2
-  - jupyter_client==7.4.2
-  - jupyter_core==4.11.1
-  - jupyter_server==1.21.0
-#- jupyterlab       : 3.4.8
-  - nbclient==0.7.0
-  - nbconvert==7.2.1
-  - nbformat==5.7.0
-  - notebook==6.4.12
-  - qtconsole  #      : not installed
-  - traitlets==5.4.0
