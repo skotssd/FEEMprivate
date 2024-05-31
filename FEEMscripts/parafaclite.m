@@ -1,16 +1,23 @@
-function [Trp,HA,FA,Tyr,error]=parafaclite(F,em,ex)
+function [Ffit,error]=parafaclite(F,em,ex,IDnum)
 
-%load IDNoneatthemoment.mat %ex 200-450 em 250-600
-% defien 4 components from Homeostatsis sduty Helena.
-exmodel=exmodelfun; emmodel=emmodelfun;
-Cex=exmodel(:,1); Cem=emmodel(:,1); % pull ex and em from the data
-C=size(exmodel,2)-1;% the number of components
-EXmodel=exmodel(:,2:C+1); EMmodel=emmodel(:,2:C+1);
-for i=1:1:C
-    istr=num2str(i); 
-    txt=['Cex',istr,'=EXmodel(:,i);']; eval(txt)
-    txt=['Cem',istr,'=EMmodel(:,i);']; eval(txt)
-end
+txt=['load ID',IDnum,'.mat']; eval(txt);
+
+%load IDNoneatthemoment.mat 
+%load ID2882.mat %230-450	260-550
+
+
+
+%ex 200-450 em 250-600% defien 4 components from Homeostatsis sduty Helena.
+%exmodel=exmodelfun; emmodel=emmodelfun;
+%Cex=exmodel(:,1); Cem=emmodel(:,1); % pull ex and em from the data
+%C=size(exmodel,2)-1;% the number of components
+%EXmodel=exmodel(:,2:C+1); EMmodel=emmodel(:,2:C+1);
+
+%for i=1:1:C
+%    istr=num2str(i); 
+%    txt=['Cex',istr,'=EXmodel(:,i);']; eval(txt)
+%    txt=['Cem',istr,'=EMmodel(:,i);']; eval(txt)
+%end
 
 for i=1:C
     istr=num2str(i);
@@ -20,6 +27,9 @@ for i=1:C
     eval(txt)
     txt=['F',istr,'=Cex',istr,'i''*Cem',istr,'i;'];
     eval(txt);
+    subplot(3,3,i); hold on;
+    txt=['contour(em,ex,F',istr,')']; eval(txt)
+    title(istr)
 end
     
 
@@ -40,7 +50,7 @@ runningtxt=runningtxt(1:length(runningtxt)-1); txt=[runningtxt,')).^2)));']; eva
 options=optimset('MaxFunEvals',10000,'display','off','TolFun',1e-5,'TolX',1e-5);
 [pmin,fval]=fminsearch(fcn,p0,options); p=10.^pmin;
 [pmin,fval]=fminsearch(fcn,pmin,options); p=10.^pmin;
-[pmin,fval]=fminsearch(fcn,pmin,options); p=10.^pmin;
+[pmin,fval]=fminsearch(fcn,pmin,options); p=10.^pmin
 
 Ffit=zeros(size(F));
 for i=1:C
@@ -50,7 +60,9 @@ end
 sumF=sum(sum(FnoNaN)); sumFfit=sum(sum(Ffit)); 
 overallfit=100-(100*(sumF-sumFfit)./sumF);
 
-Trp=p(1); HA=p(2); FA=p(3); Tyr=p(4); error=overallfit;
+%Trp=p(1); HA=p(2); FA=p(3); Tyr=p(4); 
+
+error=overallfit;
 
 %figure(3)
 %subplot(221)
