@@ -12,8 +12,11 @@ As of June 2024 I could not get xeus-octave to work in Arch-based distros, or ev
 https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html
 
 $ "${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+
 $ micromamba config append channels conda-forge
+
 $ micromamba config set channel_priority strict
+
 $ echo "alias mamba='micromamba'" >> ~/.bashrc
 
 close and reopen your shell. or run "source ~/.bashrc"
@@ -21,6 +24,9 @@ close and reopen your shell. or run "source ~/.bashrc"
 https://github.com/jupyter-xeus/xeus-octave
 
 $ mamba create -n myenv -c conda-forge xeus-octave
+
 $ mamba activate -n myenv
+
 $ mamba install -c conda-forge jupyterlab
 
+To use these scripts (once cloned and xeus-octave and jupyter lab installed and active).  Go to USERS and pick any user.  Look at the TEMPLATE ipynb file.  That gives instructions on how to use it (written in markdown between code blocks).  The DATA directory also has an instrutional ipynb file.
