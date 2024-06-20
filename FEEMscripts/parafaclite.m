@@ -48,9 +48,9 @@ end
 
 runningtxt=runningtxt(1:length(runningtxt)-1); txt=[runningtxt,')).^2)));']; eval(txt);
 options=optimset('MaxFunEvals',10000,'display','off','TolFun',1e-5,'TolX',1e-5);
-[pmin,fval]=fminsearch(fcn,p0,options); p=10.^pmin;
-[pmin,fval]=fminsearch(fcn,pmin,options); p=10.^pmin;
-[pmin,fval]=fminsearch(fcn,pmin,options); p=10.^pmin
+[pmin,fval]=fminsearch(fcn,p0,options); p=10.^pmin
+%[pmin,fval]=fminsearch(fcn,pmin,options); p=10.^pmin;
+%[pmin,fval]=fminsearch(fcn,pmin,options); p=10.^pmin;
 
 Ffit=zeros(size(F));
 for i=1:C
